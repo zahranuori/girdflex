@@ -19,6 +19,7 @@ body {
 
 .sidebar {
     grid-area: sidebar;
+
 }
 
 .header {
@@ -44,6 +45,8 @@ body {
     grid-template: repeat(2, 50fr)/repeat(2, 50fr);
     align-items: stretch;
     justify-items: stretch;
+    justify-content: stretch;
+    align-content: stretch;
 
 
 
@@ -59,8 +62,8 @@ img {
     width: 99%;
     margin: 0.2rem 0 0.2rem 0;
 }
-span {
 
+span {
     color: rgb(65, 87, 109);
 }
 a:link {
@@ -74,5 +77,61 @@ a:link {
     border-radius: 100px;
     display: inline;
 
+}
+.contact{
+    grid-area: contact;
+    padding-left: 10px ;
+}
 
+.header-text {
+    width: 75%;
+    font-size: 2rem;
+}
+.header-subtext {
+    font-size: 1rem;
+    font-weight: normal;
+}
+.icons{
+    visibility: hidden;
+}
+
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .container {
+        display: grid;
+        grid-template: repeat(10, 12.5fr) / 100%;
+        grid-template-areas: "header" "header" "header" "header" "gallery" "gallery" "gallery" "gallery";
+    }
+    .sidebar {
+        display: none;
+    }
+    .gallery {
+        grid-area: gallery;
+        display: grid;
+        grid-template: repeat(4, 50fr) / 100%;
+        justify-content: stretch;
+        justify-items: stretch;
+        align-content: stretch;
+        align-items: stretch;
+
+    }
+    .icons {
+        visibility: visible;
+        align-self: flex-end;
+        font-size: 30px;
+        margin: 5px;
+    }
+    .header-text {
+        width: 75%;
+        font-size: 20px;
+    }
+    .header-subtext {
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .icon {
+        visibility: visible;
+        align-self: flex-end;
+        font-size: 30px;
+        margin: 5px;
+    }
 }
